@@ -2,6 +2,9 @@ $( document ).ready(function() {
 
     const currentTime = moment();
     console.log(currentTime);
+
+    $("#currentDay").text(currentTime.format("dddd, LL"));
+
     
     let row = $(".row");
     //let date = moment(date).hour(8);
@@ -11,7 +14,7 @@ $( document ).ready(function() {
     function createSchedule (){
 
         //row.text($("#hour").text(hour.format("H a")));
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 9; i++) {
             // Bootstrap row
             const row = $("<div>").addClass("row"); 
             
@@ -19,7 +22,7 @@ $( document ).ready(function() {
             $(".container").append(row);
 
             // Display hour block
-            row.append($("<div>").addClass("col-2 bg-primary").text(hour.format("H a")));
+            row.append($("<div>").addClass("col-2 bg-primary").text(hour.format("h A")));
             
             // Display input block
             row.append($("<textarea>").addClass("col-8 bg-secondary"));
