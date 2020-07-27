@@ -3,17 +3,15 @@ $( document ).ready(function() {
     const currentTime = moment();
     console.log(currentTime);
 
+    // Display current date at top of the calendar
     $("#currentDay").text(currentTime.format("dddd, LL"));
 
-    
-    let row = $(".row");
-    //let date = moment(date).hour(8);
+    // Get time starting at 9am to display business hours
     let hour = moment(currentTime).hour(9); 
     console.log(hour);
 
     function createSchedule (){
 
-        //row.text($("#hour").text(hour.format("H a")));
         for (let i = 0; i < 9; i++) {
             // Bootstrap row
             const row = $("<div>").addClass("row"); 
