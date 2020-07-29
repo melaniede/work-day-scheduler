@@ -30,9 +30,9 @@ $( document ).ready(function() {
 
             // Color code timeblock for past, present, and future hours
             if (currentTime.isBefore(hour, "hour")) {
-                $("textarea").addClass("bg-secondary");
-            } else if (currentTime.isAfter(hour, "hour")) {
                 $("textarea").addClass("bg-success");
+            } else if (currentTime.isAfter(hour, "hour")) {
+                $("textarea").addClass("bg-secondary");
             } else {
                 $("textarea").addClass("bg-danger");
             }
