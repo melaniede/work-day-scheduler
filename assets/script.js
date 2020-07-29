@@ -23,10 +23,19 @@ $( document ).ready(function() {
             row.append($("<div>").addClass("col-2 bg-primary").text(hour.format("h A")));
             
             // Display input block
-            row.append($("<textarea>").addClass("col-8 bg-secondary"));
-            
+            row.append($("<textarea>").addClass("col-8"));
+
             // Display save button 
             row.append($("<button>").addClass("col-2 btn bg-info far fa-save"));
+
+            // Color code timeblock for past, present, and future hours
+            if (currentTime.isBefore(hour, "hour")) {
+                $("textarea").addClass("bg-secondary");
+            } else if (currentTime.isAfter(hour, "hour")) {
+                $("textarea").addClass("bg-success");
+            } else {
+                $("textarea").addClass("bg-danger");
+            }
 
             // Add an hour to hour block
             hour.add(1, "hour");
